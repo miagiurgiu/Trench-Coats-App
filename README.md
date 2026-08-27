@@ -109,7 +109,7 @@ Users can:
 * View the shopping basket through a `QTableView`
 
 ## UML Diagram
-
+![UML Diagram](start/DiagramTrenchCoatsOOPGood.drawio.png)
 
 ## Architecture
 
