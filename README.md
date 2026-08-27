@@ -44,7 +44,7 @@
 
 ## Overview
 
-Developed incrementally across seven Object-Oriented Programming assignments, the application evolved from a console-based inventory manager into a complete Qt desktop application.
+Developed incrementally across multiple Object-Oriented Programming assignments, the application evolved from a console-based inventory manager into a complete Qt desktop application.
 
 It provides two operating modes:
 
@@ -107,6 +107,9 @@ Users can:
 * Save the shopping basket as a CSV or HTML file
 * Open the saved shopping basket using the appropriate external application
 * View the shopping basket through a `QTableView`
+
+## UML Diagram
+
 
 ## Architecture
 
@@ -251,6 +254,3 @@ The application includes:
 * Duplicate prevention
 * Custom exceptions for repository and validation errors
 
-## UML Diagram
-
-The repository includes a UML class diagram representing the application's classes, inheritance relationships, and layered architecture.
