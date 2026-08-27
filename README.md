@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Trench Coats Shopping Application 🧥</h1>
+<h1>Trench Coats Shopping Application </h1>
 
 <p>
   <strong>A C++ and Qt desktop storefront with inventory management, persistent storage, and a complete customer shopping workflow.</strong>
