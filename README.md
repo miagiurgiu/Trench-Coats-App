@@ -89,7 +89,7 @@ Each trench coat contains:
 * Quantity
 * Photograph URL
 
-Duplicate entities cannot be added. Attempts to update or remove an entity that does not exist are rejected and reported to the user.
+> Duplicate entities cannot be added. Attempts to update or remove an entity that does not exist are rejected and reported to the user.
 
 ### User Mode
 
@@ -117,7 +117,7 @@ The application follows a layered architecture:
 * User interfaces (both console-based and GUI)
 * Tests
 
-Input data and entities are validated before reaching the repository. Repository and validation errors are communicated using custom exception classes.
+> Input data and entities are validated before reaching the repository. Repository and validation errors are communicated using custom exception classes.
 
 ## Development Iterations
 
