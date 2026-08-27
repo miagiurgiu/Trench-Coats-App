@@ -1,0 +1,93 @@
+This app was built in multiple iterations.
+
+Trench coats are cool. Everyone should own a trench coat. The “Proper Trench Coats” store sells fashionable, elegant trench coats and the store needs software to allow their customers to order online. The application can be used in two modes: administrator and user. When the application is started, it will offer the option to choose the mode.
+
+First iteration highlights:
+- The application must be implemented in C++ and use layered architecture.
+- Provide tests and specifications for non-trivial functions outside the UI. Test coverage must be at least 98% for all layers, except the UI.
+- Validate the input data.
+- If an entity that already exists is added, a message is shown and the entity is not stored. You must decide what makes an entity unique.
+- If the user tries to update/delete an entity that does not exist, a message will be shown and there will be no effect on the list of entities.
+- admin mode:
+    - Define the DynamicVector class which provides the specific operations: add, remove, length, etc. The array of elements must be dynamically allocated.
+    - Administrator mode: The application will have a database which holds available trench coats at a given moment. The store employees must be able to update the database, meaning: add a new trench coat, delete a trench coat (when it is sold out) and update the information of a trench coat. Each Trench Coat has a size, a colour, a price, a quantity and a photograph. The photograph is memorised as a link towards an online resource (the photograph on the presentation site of the store). The administrators will also have the option to see all the trench coats in the store.
+
+Second iteration:
+- user mode:
+    - User mode: A user can access the application and choose one or more trench coats to buy. The application will allow the user to:
+
+      See the trench coats in the database, having a given size, one by one. If the size is empty, then all the trench coats will be considered. When the user chooses this option, the data of the first trench coat (size, colour, price, quantity) is displayed, along with its photograph.
+      Choose to add the trench to the shopping basket. In this case, the price is added to the total sum the user has to pay. The total sum will be shown after each purchase.
+      Choose not to add the trench coat to the basket and to continue to the next. In this case, the information corresponding to the next trench coat is shown and the user is again offered the possibility to buy it. This can continue as long as the user wants, as when arriving to the end of the list, if the user chooses next, the application will again show the first trench coat.
+      See the shopping basket and the total price of the items.
+
+
+Third iteration:
+- Replace the templated DynamicVector with the STL vector. Use STL algorithms wherever possible in your application (e.g. in your filter function you could use copy_if, count_if). Replace all your for loops either with STL algorithms, or with C++11's range-based for loop.
+- Store repository data in a text file. When the program starts, entities are read from the file. Modifications made during program execution are stored in the file. Implement this using the iostream library. Create insertion and extraction operators for your entities and use these when reading/writing to/from files or the console.
+
+Fourth iteration:
+- Use exceptions to signal errors:
+
+  from the repository;
+  validation errors – validate your entities using Validator classes;
+  create your own exception classes.
+  validate program input.
+- Depending on your assignment, store your (adoption list, movie watch list, shopping basket or tutorial watch list) in a file. When the application starts, the user should choose the type of file between CSV or HTML. Depending on the type, the application will save the list in the correct format.
+
+  Indications
+  The CSV file will contain each entity on one line and the attributes will be separated by comma
+  The HTML file will contain a table, in which each row holds the data of one entity. The columns of the table will contain the names of the data attributes.
+  These are exemplified in the example.csv and example.html files. CSV and HTML files are used to save and display data to the user; they act as program outputs, so data should not be read from them!
+
+- Add a new command, allowing the user to see the:
+
+  adoption list
+  movie watch list
+  shopping basket
+  tutorial watch list
+  Displaying the list means opening the saved file (CSV or HTML) with the correct application (CSV files using Notepad, Notepad++, Microsoft Excel etc. and HTML files using a browser)
+- last 2 requirements use inheritance and polymorphism
+- Create a UML class diagram for your entire application. For this, you can use any tool that you like (StarUML, [LucidChart](https://www.lucidchart.com/ or draw.io) are only some examples. Many other options exist.
+- bonus: In addition to the file-based implementation for the repository, implement a true database-backed repository. For this, use inheritance and polymorphism. You are free to choose any type of database management system (e.g. MySQL, SQLite, PostgreSQL, Couchbase etc.).
+
+Fifth iteration:
+- Create a graphical user interface using the Qt framework for the problem you have been working on for the previous assignments.
+- Implement the interface design, without using the Qt Designer. Use layouts to design your interface.
+  The list or table displaying the repository entities in administrator mode should be populated using your input file.
+
+Sixth iteration:
+- All functionalities must be available through the GUI. You may use Qt Designer, if you want to change the initial design of your GUI.
+- The functionality of the application must be the same (including the one-by-one iteration of objects for the user mode).
+- bonus: Create a graphical representation of the data in your application. You have an example below: a bar chart representing the number of songs for each artist. Your representations can be a bar chart, a pie chart or another type of chart. You can even use circles or rectangles or any other geometric shapes to represent the data.
+
+         Hint: You can use QPainter (https://doc.qt.io/qt-6/qpainter.html), QGraphicsScene (https://doc.qt.io/qt-6/qgraphicsscene.html) or a special widget designed for plotting and data visualisation – QCustomPlot (http://www.qcustomplot.com/).
+
+Seventh iteration:
+- Add multiple undo and redo functionality for the add, remove, and update operations. Implement this functionality using inheritance and polymorphism. You will have Undo and Redo buttons on the GUI, as well as a key combination to undo and redo the operations (e.g. Ctrl+Z, Ctrl+Y).
+- Show the contents of the adoption list / movie watch list / shopping basket / tutorial watch list using a table view. You must use the Qt View/Model components (QTableView). Create your own model – a class which inherits from QAbstractTableModel. This window will be opened from your GUI's main window.
+
+
+Project structure:
+1. domain: coat.h, coat.cpp
+2. repo interface: abstract_repo.h - base class for repository and databaserepository - enables polymorphism
+3. repo.h, repo.cpp - used when choosing file repository from console (app will use file repo, not database repo)
+4. database_repo.h, database_repo.cpp - used when choosing database  - bonus
+5. service.h, service.cpp - uses abstract repo - // Uses polymorphism via AbstractRepo and AbstractShoppingBasket, Connects repositories, basket, GUI, and undo/redo
+6. undo_action.h, undo_action.cpp
+7. csv_shopping_basket.h/.cpp - when using csv, not html shopping basket (opens excel/pages on mac)
+8. html_shopping_basket.h/.cpp -Used when choosing HTML
+9. gui.h, gui.cpp
+   Final Qt interface
+10. basket_table_model.h/.cpp
+    Required by QTableView
+11. chart_widget.h/.cpp
+    Actively used by the GUI and represents the bonus chart
+12. validation.h/.cpp, exceptions.h
+    Used by the GUI and repositories
+ 13. tests -
+
+ 14. main
+ 15. coats.csv
+ 16. uml diagram on readme screenshot
+
