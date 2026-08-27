@@ -44,10 +44,9 @@
 
 ## Overview
 
-Developed incrementally across multiple Object-Oriented Programming assignments, the application evolved from a console-based inventory manager into a complete Qt desktop application.
+Developed in multiple iterations across Object-Oriented Programming assignments, the application evolved from a console-based inventory manager into a complete Qt desktop application.
 
 It provides two operating modes:
-
 * **Administrator mode** for managing the store inventory
 * **User mode** for browsing trench coats and managing a shopping basket
 
@@ -55,7 +54,6 @@ The project demonstrates layered architecture, STL containers and algorithms, fi
 
 
 ## Technologies and Concepts
-
 * C++
 * Qt
 * CMake
@@ -69,6 +67,7 @@ The project demonstrates layered architecture, STL containers and algorithms, fi
 * Qt Model/View architecture
 * Undo and redo functionality
 * Unit testing
+
 
 ## Main Features
 
@@ -99,28 +98,23 @@ Users can:
 * Browse trench coats of a specified size
 * Browse all trench coats when no size is specified
 * View trench coats one by one
-* Open the photograph associated with a trench coat
 * Add trench coats to the shopping basket
 * Skip to the next available trench coat
-* Continue browsing from the beginning after reaching the end
+* Continue browsing from the beginning after reaching the end (looping)
 * View the shopping basket and its total price
 * Save the shopping basket as a CSV or HTML file
-* Open the saved shopping basket using the appropriate external application
-* View the shopping basket through a `QTableView`
 
-## UML Diagram
-![UML Diagram](start/DiagramTrenchCoatsOOPGood.drawio.png)
 
 ## Architecture
 
-The application follows a layered architecture and separates its responsibilities into components such as:
+The application follows a layered architecture:
 
 * Domain
 * Repository
 * Service
 * Validation
 * Shopping basket
-* User interface
+* User interfaces (both console-based and GUI)
 * Tests
 
 Input data and entities are validated before reaching the repository. Repository and validation errors are communicated using custom exception classes.
@@ -129,7 +123,7 @@ Input data and entities are validated before reaching the repository. Repository
 
 ### Iteration 1 — Core Application and Administrator Mode
 
-The first iteration established the main structure of the application.
+The first iteration established the main structure of the application and the admin mode,
 
 Implemented requirements:
 
@@ -137,21 +131,21 @@ Implemented requirements:
 * A dynamically allocated `DynamicVector` class
 * Administrator operations for adding, removing, updating, and displaying trench coats
 * Input and entity validation
-* Duplicate detection
+* Duplicate detection (a coat is unique by size + colour)
 * Error handling for update and delete operations on nonexistent entities
 * Specifications and tests for non-trivial functions outside the UI
 * At least 98% test coverage for all layers except the UI
 
 ### Iteration 2 — User Mode
 
-The second iteration introduced the customer-facing functionality.
+The second iteration introduced the user mode.
 
 Implemented requirements:
 
 * Filtering trench coats by size
 * Displaying all trench coats when the size is left empty
 * Browsing trench coats one by one
-* Opening the photograph of the displayed trench coat
+* Opening the photograph of the displayed trench coat automatically, in the web browser
 * Adding trench coats to the shopping basket
 * Updating and displaying the total price after each purchase
 * Circular navigation through the available trench coats
@@ -189,7 +183,7 @@ Implemented requirements:
 * Inheritance and polymorphism for the shopping basket implementations
 * A UML class diagram covering the entire application
 
-CSV and HTML files are used only as application outputs. Repository data is not loaded from these files.
+> Note: CSV and HTML files are used only as application outputs. Repository data is not loaded from these files.
 
 ### Iteration 5 — Qt Graphical Interface
 
@@ -198,9 +192,7 @@ The fifth iteration introduced a graphical user interface using Qt.
 Implemented requirements:
 
 * Qt-based graphical interface
-* Layout-based interface design without Qt Designer
 * Administrator inventory displayed using data loaded from the input file
-* Graphical access to the core inventory-management operations
 
 ### Iteration 6 — Complete GUI Functionality
 
@@ -231,18 +223,6 @@ Implemented requirements:
 * Custom table model derived from `QAbstractTableModel`
 * Shopping basket table opened in a separate window
 
-## Data Export
-
-The shopping basket can be saved in either of the following formats:
-
-### CSV
-
-Each trench coat is stored on a separate line, with its attributes separated by commas.
-
-### HTML
-
-The shopping basket is represented as a table. Each row contains one trench coat, while the columns correspond to its attributes.
-
 ## Testing and Validation
 
 The application includes:
@@ -254,3 +234,5 @@ The application includes:
 * Duplicate prevention
 * Custom exceptions for repository and validation errors
 
+## UML Diagram
+![UML Diagram](start/DiagramTrenchCoatsOOPGood.drawio.png)
