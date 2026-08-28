@@ -44,7 +44,7 @@
 
 ## Overview
 
-Developed in multiple iterations across Object-Oriented Programming assignments, the application evolved from a console-based inventory manager into a complete Qt desktop application.
+Developed in multiple iterations across Object-Oriented Programming assignments, the application evolved from a console-based inventory manager into a complete Qt desktop application. This app is an enhanced version of the one required at uni, with cleaner structure etc.
 
 It provides two operating modes:
 * **Administrator mode** for managing the store inventory
