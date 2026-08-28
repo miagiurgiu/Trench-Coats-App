@@ -27,6 +27,7 @@ GUI::GUI(Service& service,QWidget* parent):
     this->chartWidget=nullptr;
 
     ui->setupUi(this);
+    ui->tabWidget->setCurrentIndex(0); // admin to be the first thing that pops up
     this->configureUI();
     this->initChartTab();
     this->connectSignalsAndSlots();
@@ -387,6 +388,7 @@ void GUI::undo() {
     try {
         this->service.undo();
         this->populateTable();
+        this->updateChart();
     }
     catch (std::exception& exception) {
         QMessageBox::warning(this,"Error",exception.what());
@@ -397,6 +399,7 @@ void GUI::redo() {
     try {
         this->service.redo();
         this->populateTable();
+        this->updateChart();
     }
     catch (std::exception& exception) {
         QMessageBox::warning(this,"Error",exception.what());

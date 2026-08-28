@@ -2,64 +2,481 @@
 <ui version="4.0">
  <class>GUI</class>
  <widget class="QWidget" name="GUI">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>617</width>
-    <height>467</height>
-   </rect>
+  <property name="font">
+   <font>
+    <family>Inter</family>
+    <pointsize>-1</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>GUI</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#GUI {
+    color: #F8F4E9;
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;SF Pro Display&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 14px;
+
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 1,
+        stop: 0 #0B000B,
+        stop: 0.45 #190019,
+        stop: 0.78 #271229,
+        stop: 1 #3B203F
+    );
+}</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>12</number>
+   </property>
+   <property name="leftMargin">
+    <number>18</number>
+   </property>
+   <property name="topMargin">
+    <number>18</number>
+   </property>
+   <property name="rightMargin">
+    <number>18</number>
+   </property>
+   <property name="bottomMargin">
+    <number>18</number>
+   </property>
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="font">
+      <font>
+       <family>Helvetica Neue</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane {
+    background: transparent;
+    border: 1px solid rgba(246, 219, 192, 28);
+    border-radius: 12px;
+    top: -1px;
+}
+
+QTabBar::tab {
+    color: rgba(248, 244, 233, 180);
+    background: #190019;
+    border: 1px solid rgba(246, 219, 192, 25);
+    border-radius: 9px;
+    padding: 9px 22px;
+    margin-right: 4px;
+    min-width: 100px;
+
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+QTabBar::tab:hover {
+    color: #F8F4E9;
+    background: #37203B;
+    border: 1px solid rgba(246, 219, 192, 65);
+}
+
+QTabBar::tab:selected {
+    color: #F8F4E9;
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 #37203B,
+        stop: 1 #502D55
+    );
+    border: 1px solid #935073;
+}
+QTabWidget::pane {
+    background: rgba(11, 0, 11, 115);
+    border: 1px solid rgba(246, 219, 192, 30);
+    border-radius: 14px;
+    top: -1px;
+}</string>
+     </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="adminTab">
+      <property name="styleSheet">
+       <string notr="true">QWidget#adminTab {
+    color: #F8F4E9;
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;SF Pro Display&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 14px;
+
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 1,
+        stop: 0 #0B000B,
+        stop: 0.35 #190019,
+        stop: 0.72 #2E1732,
+        stop: 1 #502D55
+    );
+}
+
+/* Labels */
+
+QWidget#adminTab QLabel {
+    color: #F6DBC0;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Input fields */
+
+QWidget#adminTab QLineEdit {
+    color: #F8F4E9;
+    background: rgba(11, 0, 11, 205);
+    border: 1px solid rgba(246, 219, 192, 38);
+    border-radius: 10px;
+    padding: 8px 12px;
+    min-height: 23px;
+    selection-color: #F8F4E9;
+    selection-background-color: #935073;
+}
+
+QWidget#adminTab QLineEdit:hover {
+    background: rgba(25, 0, 25, 220);
+    border: 1px solid rgba(246, 219, 192, 75);
+}
+
+QWidget#adminTab QLineEdit:focus {
+    background: #190019;
+    border: 1px solid #935073;
+}
+
+/* Default buttons */
+
+QWidget#adminTab QPushButton {
+    color: #F8F4E9;
+    background: rgba(80, 45, 85, 115);
+    border: 1px solid rgba(246, 219, 192, 45);
+    border-radius: 10px;
+    padding: 9px 16px;
+    min-height: 23px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+QWidget#adminTab QPushButton:hover {
+    background: rgba(80, 45, 85, 180);
+    border: 1px solid rgba(246, 219, 192, 90);
+}
+
+QWidget#adminTab QPushButton:pressed {
+    background: #190019;
+    border: 1px solid #935073;
+    padding-top: 11px;
+    padding-bottom: 7px;
+}
+
+/* Add — primary violet action */
+
+QWidget#adminTab QPushButton#addButton {
+    color: #F8F4E9;
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 #37203B,
+        stop: 1 #502D55
+    );
+    border: 1px solid #935073;
+    font-weight: 700;
+}
+
+QWidget#adminTab QPushButton#addButton:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 #502D55,
+        stop: 1 #68406D
+    );
+}
+
+/* Delete — accent outline only */
+
+QWidget#adminTab QPushButton#deleteButton {
+    color: #F6DBC0;
+    background: rgba(11, 0, 11, 105);
+    border: 1px solid rgba(147, 80, 115, 135);
+}
+
+QWidget#adminTab QPushButton#deleteButton:hover {
+    background: rgba(147, 80, 115, 42);
+    border: 1px solid #935073;
+}
+
+/* Update */
+
+QWidget#adminTab QPushButton#updateButton {
+    background: rgba(80, 45, 85, 115);
+}
+
+/* Display */
+
+QWidget#adminTab QPushButton#displayButton {
+    color: #190019;
+    background: #F6DBC0;
+    border: 1px solid #F8F4E9;
+    font-weight: 700;
+}
+
+QWidget#adminTab QPushButton#displayButton:hover {
+    color: #0B000B;
+    background: #F8F4E9;
+}
+
+/* Undo and Redo — quieter secondary actions */
+
+QWidget#adminTab QPushButton#undoButton,
+QWidget#adminTab QPushButton#redoButton {
+    color: rgba(248, 244, 233, 190);
+    background: rgba(11, 0, 11, 105);
+    border: 1px solid rgba(246, 219, 192, 30);
+    font-weight: 500;
+}
+
+QWidget#adminTab QPushButton#undoButton:hover,
+QWidget#adminTab QPushButton#redoButton:hover {
+    color: #F8F4E9;
+    background: rgba(80, 45, 85, 125);
+    border: 1px solid rgba(246, 219, 192, 70);
+}
+
+/* Confirm */
+
+QWidget#adminTab QPushButton#confirmButton {
+    color: #190019;
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 #F6DBC0,
+        stop: 1 #F8F4E9
+    );
+    border: 1px solid rgba(147, 80, 115, 130);
+    font-weight: 700;
+}
+
+QWidget#adminTab QPushButton#confirmButton:hover {
+    background: #F8F4E9;
+    border: 1px solid #935073;
+}
+
+/* Inventory table */
+
+QWidget#adminTab QTableWidget {
+    color: #F8F4E9;
+    background: rgba(11, 0, 11, 215);
+    alternate-background-color: rgba(80, 45, 85, 35);
+    border: 1px solid rgba(246, 219, 192, 35);
+    border-radius: 13px;
+    gridline-color: rgba(246, 219, 192, 15);
+    outline: none;
+}
+
+QWidget#adminTab QTableWidget::item {
+    padding: 8px;
+    border-bottom: 1px solid rgba(246, 219, 192, 10);
+}
+
+QWidget#adminTab QTableWidget::item:hover {
+    background: rgba(80, 45, 85, 80);
+}
+
+QWidget#adminTab QTableWidget::item:selected {
+    color: #F8F4E9;
+    background: rgba(147, 80, 115, 125);
+}
+
+/* Table header */
+
+QWidget#adminTab QHeaderView::section {
+    color: #F6DBC0;
+    background: rgba(25, 0, 25, 225);
+    border: none;
+    border-right: 1px solid rgba(246, 219, 192, 18);
+    border-bottom: 1px solid rgba(147, 80, 115, 80);
+    padding: 10px;
+    font-weight: 700;
+}
+
+QWidget#adminTab QTableCornerButton::section {
+    background: #190019;
+    border: none;
+}
+
+/* Scrollbar */
+
+QWidget#adminTab QScrollBar:vertical {
+    background: #0B000B;
+    width: 8px;
+    margin: 3px;
+}
+
+QWidget#adminTab QScrollBar::handle:vertical {
+    background: #502D55;
+    border-radius: 4px;
+    min-height: 28px;
+}
+
+QWidget#adminTab QScrollBar::handle:vertical:hover {
+    background: #935073;
+}
+
+QWidget#adminTab QScrollBar::add-line:vertical,
+QWidget#adminTab QScrollBar::sub-line:vertical {
+    height: 0px;
+}</string>
+      </property>
       <attribute name="title">
        <string>Admin Mode</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="6" column="4">
-        <widget class="QPushButton" name="undoButton">
-         <property name="text">
-          <string>Undo</string>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>15</number>
          </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="colourLabel">
-         <property name="text">
-          <string>Colour:</string>
+         <property name="leftMargin">
+          <number>25</number>
          </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="priceLabel">
-         <property name="text">
-          <string>Price:</string>
+         <property name="topMargin">
+          <number>25</number>
          </property>
-        </widget>
-       </item>
-       <item row="6" column="2">
-        <widget class="QPushButton" name="updateButton">
-         <property name="text">
-          <string>Update</string>
+         <property name="rightMargin">
+          <number>25</number>
          </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="quantityLabel">
-         <property name="text">
-          <string>Quantity:</string>
+         <property name="bottomMargin">
+          <number>25</number>
          </property>
-        </widget>
+         <item>
+          <widget class="QPushButton" name="displayButton">
+           <property name="text">
+            <string>Display</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="addButton">
+           <property name="text">
+            <string>Add</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deleteButton">
+           <property name="text">
+            <string>Delete</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="updateButton">
+           <property name="text">
+            <string>Update</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="undoButton">
+           <property name="text">
+            <string>Undo</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="redoButton">
+           <property name="text">
+            <string>Redo</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
-       <item row="7" column="0" rowspan="3" colspan="6">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>15</number>
+         </property>
+         <property name="leftMargin">
+          <number>25</number>
+         </property>
+         <property name="topMargin">
+          <number>25</number>
+         </property>
+         <property name="rightMargin">
+          <number>25</number>
+         </property>
+         <property name="bottomMargin">
+          <number>25</number>
+         </property>
+         <item>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="sizeLabel">
+             <property name="text">
+              <string>Size:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="sizeEdit"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="colourLabel">
+             <property name="text">
+              <string>Colour:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="colourEdit"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="priceLabel">
+             <property name="text">
+              <string>Price:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="priceEdit"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="quantityLabel">
+             <property name="text">
+              <string>Quantity:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="quantityEdit"/>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="photoLabel">
+             <property name="text">
+              <string>Photo:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="photoEdit"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QPushButton" name="confirmButton">
+           <property name="text">
+            <string>Confirm</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
         <widget class="QTableWidget" name="table">
          <property name="editTriggers">
           <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
@@ -80,154 +497,357 @@
          <column/>
         </widget>
        </item>
-       <item row="6" column="1">
-        <widget class="QPushButton" name="deleteButton">
-         <property name="text">
-          <string>Delete</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="colourEdit"/>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="photoLabel">
-         <property name="text">
-          <string>Photo:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="photoEdit"/>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="quantityEdit"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="sizeLabel">
-         <property name="text">
-          <string>Size:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QPushButton" name="addButton">
-         <property name="text">
-          <string>Add</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="priceEdit"/>
-       </item>
-       <item row="6" column="3">
-        <widget class="QPushButton" name="displayButton">
-         <property name="text">
-          <string>Display</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="sizeEdit"/>
-       </item>
-       <item row="5" column="0">
-        <widget class="QPushButton" name="confirmButton">
-         <property name="text">
-          <string>Confirm</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="6">
-        <widget class="QPushButton" name="redoButton">
-         <property name="text">
-          <string>Redo</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="userTab">
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget#userTab {
+    color: #F8F4E9;
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 14px;
+
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 1,
+        stop: 0 #0B000B,
+        stop: 0.40 #190019,
+        stop: 0.75 #29142D,
+        stop: 1 #432548
+    );
+}
+
+/* Labels */
+
+QWidget#userTab QLabel {
+    color: #F6DBC0;
+    background: transparent;
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* User input */
+
+QWidget#userTab QLineEdit {
+    color: #F8F4E9;
+    background: rgba(11, 0, 11, 210);
+    border: 1px solid rgba(246, 219, 192, 40);
+    border-radius: 10px;
+    padding: 8px 12px;
+    min-height: 24px;
+
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 14px;
+
+    selection-color: #F8F4E9;
+    selection-background-color: #935073;
+}
+
+QWidget#userTab QLineEdit:hover {
+    border: 1px solid rgba(246, 219, 192, 80);
+}
+
+QWidget#userTab QLineEdit:focus {
+    background: #190019;
+    border: 1px solid #935073;
+}
+
+/* Current coat card */
+
+QWidget#userTab QLabel#currentCoatLabel {
+    color: #F8F4E9;
+    background: rgba(11, 0, 11, 185);
+    border: 1px solid rgba(246, 219, 192, 38);
+    border-radius: 14px;
+    padding: 18px;
+
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Default buttons */
+
+QWidget#userTab QPushButton {
+    color: #F8F4E9;
+    background: rgba(80, 45, 85, 110);
+    border: 1px solid rgba(246, 219, 192, 42);
+    border-radius: 10px;
+    padding: 9px 16px;
+    min-height: 24px;
+
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+QWidget#userTab QPushButton:hover {
+    background: rgba(80, 45, 85, 180);
+    border: 1px solid rgba(246, 219, 192, 90);
+}
+
+QWidget#userTab QPushButton:pressed {
+    background: #190019;
+    border: 1px solid #935073;
+}
+
+/* Filter */
+
+QWidget#userTab QPushButton#filterButton {
+    background: #502D55;
+    border: 1px solid #935073;
+    font-weight: 700;
+}
+
+QWidget#userTab QPushButton#filterButton:hover {
+    background: #68406D;
+}
+
+/* Add to basket — main user action */
+
+QWidget#userTab QPushButton#addToBasketButton {
+    color: #190019;
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 #F6DBC0,
+        stop: 1 #F8F4E9
+    );
+    border: 1px solid rgba(147, 80, 115, 130);
+    font-weight: 700;
+}
+
+QWidget#userTab QPushButton#addToBasketButton:hover {
+    color: #0B000B;
+    background: #F8F4E9;
+    border: 1px solid #935073;
+}
+
+/* Next */
+
+QWidget#userTab QPushButton#nextButton {
+    background: rgba(80, 45, 85, 140);
+}
+
+/* Secondary basket actions */
+
+QWidget#userTab QPushButton#openBasketButton,
+QWidget#userTab QPushButton#basketTableButton {
+    color: rgba(248, 244, 233, 210);
+    background: rgba(11, 0, 11, 120);
+    border: 1px solid rgba(246, 219, 192, 35);
+}
+
+/* Shopping basket */
+
+QWidget#userTab QListWidget {
+    color: #F8F4E9;
+    background: rgba(11, 0, 11, 215);
+    alternate-background-color: rgba(80, 45, 85, 30);
+    border: 1px solid rgba(246, 219, 192, 35);
+    border-radius: 13px;
+    padding: 6px;
+
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 14px;
+    outline: none;
+}
+
+QWidget#userTab QListWidget::item {
+    padding: 9px;
+    border-bottom: 1px solid rgba(246, 219, 192, 12);
+}
+
+QWidget#userTab QListWidget::item:hover {
+    background: rgba(80, 45, 85, 75);
+}
+
+QWidget#userTab QListWidget::item:selected {
+    color: #F8F4E9;
+    background: rgba(147, 80, 115, 115);
+}
+
+/* Total */
+
+QWidget#userTab QLabel#totalLabel {
+    color: #F8F4E9;
+    background: rgba(80, 45, 85, 85);
+    border-left: 3px solid #935073;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-weight: 700;
+}</string>
+      </property>
       <attribute name="title">
        <string>User Mode</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
-        <widget class="QLabel" name="userSizeLabel">
-         <property name="text">
-          <string>Size:</string>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <property name="spacing">
+          <number>18</number>
          </property>
-        </widget>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="userSizeLabel">
+             <property name="text">
+              <string>Size:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="userSizeEdit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="filterButton">
+             <property name="text">
+              <string>Filter</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="currentCoatLabel">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>180</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>No coat selected.</string>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::TextFormat::PlainText</enum>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QPushButton" name="nextButton">
+             <property name="text">
+              <string>Next</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="addToBasketButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Add to basket</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="userSizeEdit"/>
-       </item>
-       <item>
-        <widget class="QLabel" name="currentCoatLabel">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>18</number>
          </property>
-         <property name="text">
-          <string>No coat selected.</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="openBasketButton">
-         <property name="text">
-          <string>Open basket</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="basketTableButton">
-         <property name="text">
-          <string>Basket table</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="addToBasketButton">
-         <property name="text">
-          <string>Add to basket</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="nextButton">
-         <property name="text">
-          <string>Next</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="filterButton">
-         <property name="text">
-          <string>Filter</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="shoppingBasketLabel">
-         <property name="text">
-          <string>Shopping basket:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QListWidget" name="basketList"/>
-       </item>
-       <item>
-        <widget class="QLabel" name="totalLabel">
-         <property name="text">
-          <string>Total: 0</string>
-         </property>
-        </widget>
+         <item>
+          <widget class="QLabel" name="shoppingBasketLabel">
+           <property name="text">
+            <string>Shopping basket:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="basketList">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>250</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="totalLabel">
+           <property name="text">
+            <string>Total: 0</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QPushButton" name="openBasketButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Open basket</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="basketTableButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Basket table</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>

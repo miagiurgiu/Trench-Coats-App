@@ -21,6 +21,7 @@ void ChartWidget::paintEvent(QPaintEvent* event) {
     QWidget::paintEvent(event);
 
     QPainter painter(this);
+    painter.setPen(Qt::white);
     painter.setRenderHint(QPainter::Antialiasing);
 
     if (this->data.empty()) {
@@ -58,6 +59,7 @@ void ChartWidget::paintEvent(QPaintEvent* event) {
         painter.setBrush(colour);
         painter.drawRect(x,y,barWidth,barHeight);
 
+        painter.setPen(Qt::white);
         painter.drawText(x,y-20,barWidth,20,Qt::AlignCenter,QString::number(item.second));
         painter.drawText(x,this->height()-margin,barWidth,30,Qt::AlignCenter,QString::fromStdString(item.first));
 
