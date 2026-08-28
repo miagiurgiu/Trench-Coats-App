@@ -12,6 +12,7 @@
 #include "repo/DatabaseRepo.h"
 #include "shopping_basket/HTMLShoppingBasket.h"
 #include "ui/UI.h"
+#include "ui/gui.h"
 
 int main(int argc,char *argv[]) {
     std::string interface_option;
@@ -54,13 +55,12 @@ int main(int argc,char *argv[]) {
                 ui.runApplication();
             }
             else {
-                /*
+
                 QApplication app{argc,argv};
                 GUI gui{service};
                 gui.show();
                 return app.exec();
-                */
-                std::cout<<"To be implemented";
+                //std::cout<<"To be implemented";
             }
         }
         else {
@@ -71,11 +71,11 @@ int main(int argc,char *argv[]) {
                 ui.runApplication();
             }
             else {
-                // QApplication app{argc,argv};
-                // GUI gui{service};
-                // gui.show();
-                // return app.exec();
-                std::cout<<"To be implemented";
+                QApplication app{argc,argv};
+                GUI gui{service};
+                gui.show();
+                return app.exec();
+                //std::cout<<"To be implemented";
             }
         }
     }
@@ -89,11 +89,11 @@ int main(int argc,char *argv[]) {
                 ui.runApplication();
             }
             else {
-                // QApplication app(argc, argv);
-                // GUI gui{service};
-                // gui.show();
-                // return app.exec();
-                std::cout<<"To be implemented";
+                QApplication app(argc, argv);
+                GUI gui{service};
+                gui.show();
+                return app.exec();
+                //std::cout<<"To be implemented";
             }
         }
         else {
@@ -104,11 +104,11 @@ int main(int argc,char *argv[]) {
                 ui.runApplication();
             }
             else {
-                // QApplication app(argc, argv);
-                // GUI gui{service};
-                // gui.show();
-                // return app.exec();
-                std::cout<<"To be implemented";
+                QApplication app(argc, argv);
+                GUI gui{service};
+                gui.show();
+                return app.exec();
+                //std::cout<<"To be implemented";
             }
         }
     }
