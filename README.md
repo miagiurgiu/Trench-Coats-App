@@ -53,16 +53,59 @@ It provides two operating modes:
 The project demonstrates layered architecture, STL containers and algorithms, file and database persistence, custom validation and exceptions, inheritance and polymorphism, CSV and HTML export, undo and redo operations, and Qt’s Model/View architecture.
 
 ## Demo
-![Welcome page](media/img.png)
-![Add coat](media/img_3.png)
-![Delete coat](media/img_4.png)
-![Update coat](media/img_2.png)
-![Filter coats](media/img_5.png)
-![Add coat to basket](media/img_6.png)
-![Open basket in csv](media/img_7.png)
-![Open basket in html](media/img_10.png)
-![Open basket in table view](media/img_9.png)
-![View chart](media/img_8.png)
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Welcome page</strong><br>
+      <img src="media/img.png" width="100%" alt="Welcome page">
+    </td>
+    <td align="center" width="50%">
+      <strong>Add coat</strong><br>
+      <img src="media/img_3.png" width="100%" alt="Add coat">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Delete coat</strong><br>
+      <img src="media/img_4.png" width="100%" alt="Delete coat">
+    </td>
+    <td align="center">
+      <strong>Update coat</strong><br>
+      <img src="media/img_2.png" width="100%" alt="Update coat">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Filter coats</strong><br>
+      <img src="media/img_5.png" width="100%" alt="Filter coats">
+    </td>
+    <td align="center">
+      <strong>Add coat to basket</strong><br>
+      <img src="media/img_6.png" width="100%" alt="Add coat to basket">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Open basket in CSV</strong><br>
+      <img src="media/img_7.png" width="100%" alt="Open basket in CSV">
+    </td>
+    <td align="center">
+      <strong>Open basket in HTML</strong><br>
+      <img src="media/img_10.png" width="100%" alt="Open basket in HTML">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Open basket in table view</strong><br>
+      <img src="media/img_9.png" width="100%" alt="Open basket in table view">
+    </td>
+    <td align="center">
+      <strong>View chart</strong><br>
+      <img src="media/img_8.png" width="100%" alt="View chart">
+    </td>
+  </tr>
+</table>
 
 ## Technologies and Concepts
 * C++
