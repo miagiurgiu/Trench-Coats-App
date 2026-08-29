@@ -64,7 +64,7 @@ The project demonstrates layered architecture, STL containers and algorithms, fi
 ![Open basket in html](media/img10.png)
 ![Open basket in table view](media/img7.png)
 ![View chart](media/img8.png)
-
+#yep
 
 ## Technologies and Concepts
 * C++
