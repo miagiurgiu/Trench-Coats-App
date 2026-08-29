@@ -52,6 +52,19 @@ It provides two operating modes:
 
 The project demonstrates layered architecture, STL containers and algorithms, file and database persistence, custom validation and exceptions, inheritance and polymorphism, CSV and HTML export, undo and redo operations, and Qt’s Model/View architecture.
 
+## Demo
+![Welcome page](media/img.png)
+![Add coat](media/img3.png)
+![Delete coat](media/img3.png)
+![Update coat](media/img2.png)
+![Update coat](media/img2.png)
+![Filter coats](media/img5.png)
+![Add coat to basket](media/img6.png)
+![Open basket in csv](media/img7.png)
+![Open basket in html](media/img10.png)
+![Open basket in table view](media/img7.png)
+![View chart](media/img8.png)
+
 
 ## Technologies and Concepts
 * C++
