@@ -159,9 +159,6 @@ Users can:
 * View the shopping basket and its total price
 * Save the shopping basket as a CSV or HTML file
 
-## UML Diagram
-![UML Diagram](start/DiagramTrenchCoatsOOPGood.drawio.png)
-
 ## Architecture
 
 The application follows a layered architecture:
@@ -175,6 +172,9 @@ The application follows a layered architecture:
 * Tests
 
 > Input data and entities are validated before reaching the repository. Repository and validation errors are communicated using custom exception classes.
+
+## UML Diagram
+![UML Diagram](start/DiagramTrenchCoatsOOPGood.drawio.png)
 
 ## Development Iterations
 
