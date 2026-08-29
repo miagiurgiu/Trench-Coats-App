@@ -19,6 +19,7 @@
 #include <QShortcut>
 #include <QKeySequence>
 #include <map>
+#include <QDesktopServices>
 
 GUI::GUI(Service& service,QWidget* parent):
     QWidget(parent),ui(new Ui::GUI),service{service} {
@@ -373,15 +374,114 @@ void GUI::confirmAdminAction() {
 void GUI::showBasketTable() {
     if (this->basketTableView==nullptr) {
         this->basketTableView=new QTableView{};
-        this->basketModel=new BasketTableModel{this->service.get_basket(),this->basketTableView};
+        this->basketTableView->setObjectName("basketTableView");
 
+        this->basketModel=new BasketTableModel{this->service.get_basket(),this->basketTableView};
         this->basketTableView->setModel(this->basketModel);
-        this->basketTableView->resize(900,400);
-        this->basketTableView->setWindowTitle("Shopping basket table");
+
+        this->basketTableView->setWindowTitle("Shopping basket");
+        this->basketTableView->setMinimumSize(950,450);
+        this->basketTableView->resize(1050,500);
+
+        this->basketTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        this->basketTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+        this->basketTableView->setSelectionMode(QAbstractItemView::SingleSelection);
+        this->basketTableView->setAlternatingRowColors(true);
+        this->basketTableView->setShowGrid(false);
+
+        this->basketTableView->verticalHeader()->setVisible(false);
+        this->basketTableView->horizontalHeader()->setSectionResizeMode(0,QHeaderView::ResizeToContents);
+        this->basketTableView->horizontalHeader()->setSectionResizeMode(1,QHeaderView::Stretch);
+        this->basketTableView->horizontalHeader()->setSectionResizeMode(2,QHeaderView::ResizeToContents);
+        this->basketTableView->horizontalHeader()->setSectionResizeMode(3,QHeaderView::ResizeToContents);
+        this->basketTableView->horizontalHeader()->setSectionResizeMode(4,QHeaderView::Stretch);
+
+        this->basketTableView->setStyleSheet(R"(
+            QTableView#basketTableView {
+                color: #F8F4E9;
+                font-family: "Inter", "SF Pro Text", "Helvetica Neue";
+                font-size: 14px;
+
+                background: qlineargradient(
+                    x1: 0, y1: 0,
+                    x2: 1, y2: 1,
+                    stop: 0 #0B000B,
+                    stop: 0.48 #190019,
+                    stop: 0.80 #271229,
+                    stop: 1 #3B203F
+                );
+
+                alternate-background-color: rgba(80, 45, 85, 45);
+                border: 1px solid rgba(246, 219, 192, 38);
+                gridline-color: transparent;
+                outline: none;
+            }
+
+            QTableView#basketTableView::item {
+                padding: 10px;
+                border-bottom: 1px solid rgba(246, 219, 192, 14);
+            }
+
+            QTableView#basketTableView::item:hover {
+                background: rgba(80, 45, 85, 100);
+            }
+
+            QTableView#basketTableView::item:selected {
+                color: #F8F4E9;
+                background: rgba(147, 80, 115, 125);
+            }
+
+            QTableView#basketTableView QHeaderView::section {
+                color: #F6DBC0;
+                background: #190019;
+                border: none;
+                border-right: 1px solid rgba(246, 219, 192, 18);
+                border-bottom: 1px solid rgba(147, 80, 115, 85);
+                padding: 11px;
+                font-weight: 700;
+            }
+
+            QTableView#basketTableView QTableCornerButton::section {
+                background: #190019;
+                border: none;
+            }
+
+            QTableView#basketTableView QScrollBar:vertical {
+                background: #0B000B;
+                width: 9px;
+            }
+
+            QTableView#basketTableView QScrollBar::handle:vertical {
+                background: #502D55;
+                border-radius: 4px;
+                min-height: 30px;
+            }
+
+            QTableView#basketTableView QScrollBar::handle:vertical:hover {
+                background: #935073;
+            }
+
+            QTableView#basketTableView QScrollBar::add-line:vertical,
+            QTableView#basketTableView QScrollBar::sub-line:vertical {
+                height: 0px;
+            }
+        )");
+
+        connect(this->basketTableView,&QTableView::clicked,this,[this](const QModelIndex& index){
+            if (index.column()!=4)
+                return;
+
+            QString photo=index.data(Qt::UserRole).toString();
+
+            if (!photo.isEmpty())
+                QDesktopServices::openUrl(QUrl{photo});
+        });
     }
 
     this->basketModel->updateData(this->service.get_basket());
     this->basketTableView->show();
+    this->basketTableView->raise();
+    this->basketTableView->activateWindow();
 }
 
 void GUI::undo() {

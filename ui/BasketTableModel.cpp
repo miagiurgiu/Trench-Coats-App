@@ -3,6 +3,9 @@
 //
 
 #include "BasketTableModel.h"
+#include <QColor>
+#include <QFont>
+
 BasketTableModel::BasketTableModel(const std::vector<Coat>& coats,QObject* parent):QAbstractTableModel{parent},coats{coats}{}
 
 int BasketTableModel::rowCount(const QModelIndex&) const {
@@ -14,28 +17,44 @@ int BasketTableModel::columnCount(const QModelIndex&) const {
 }
 
 QVariant BasketTableModel::data(const QModelIndex& index,int role) const {
-
-    if (!index.isValid() ||
-        role != Qt::DisplayRole) {
+    if (!index.isValid())
         return QVariant{};
+
+    const Coat& coat=coats[index.row()];
+
+    if (index.column()==4) {
+        QString photo=QString::fromStdString(coat.get_photo());
+
+        if (role==Qt::UserRole || role==Qt::ToolTipRole)
+            return photo;
+
+        if (role==Qt::ForegroundRole)
+            return QColor("#F6DBC0");
+
+        if (role==Qt::FontRole) {
+            QFont font;
+            font.setUnderline(true);
+            return font;
         }
+    }
 
-    const Coat& coat = coats[index.row()];
+    if (role!=Qt::DisplayRole)
+        return QVariant{};
 
-    if (index.column() == 0)
+    if (index.column()==0)
         return QString::fromStdString(coat.get_size());
 
-    if (index.column() == 1)
+    if (index.column()==1)
         return QString::fromStdString(coat.get_colour());
 
-    if (index.column() == 2)
+    if (index.column()==2)
         return QString::number(coat.get_price());
 
-    if (index.column() == 3)
+    if (index.column()==3)
         return QString::number(coat.get_quantity());
 
-    if (index.column() == 4)
-        return QString::fromStdString(coat.get_photo());
+    if (index.column()==4)
+        return "Open photo ↗";
 
     return QVariant{};
 }
