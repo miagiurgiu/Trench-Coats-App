@@ -61,48 +61,48 @@ The project demonstrates layered architecture, STL containers and algorithms, fi
       <img src="media/img.png" width="100%" alt="Welcome page">
     </td>
     <td align="center" width="50%">
-      <strong>Add coat</strong><br>
-      <img src="media/img_3.png" width="100%" alt="Add coat">
+      <strong>View chart</strong><br>
+      <img src="media/img_8.png" width="100%" alt="View chart">
     </td>
   </tr>
   <tr>
+    <td align="center">
+      <strong>Add coat</strong><br>
+      <img src="media/img_3.png" width="100%" alt="Add coat">
+    </td>
     <td align="center">
       <strong>Delete coat</strong><br>
       <img src="media/img_4.png" width="100%" alt="Delete coat">
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <strong>Update coat</strong><br>
       <img src="media/img_2.png" width="100%" alt="Update coat">
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <strong>Filter coats</strong><br>
       <img src="media/img_5.png" width="100%" alt="Filter coats">
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <strong>Add coat to basket</strong><br>
       <img src="media/img_6.png" width="100%" alt="Add coat to basket">
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <strong>Open basket in CSV</strong><br>
       <img src="media/img_7.png" width="100%" alt="Open basket in CSV">
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <strong>Open basket in HTML</strong><br>
       <img src="media/img_10.png" width="100%" alt="Open basket in HTML">
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <strong>Open basket in table view</strong><br>
       <img src="media/img_9.png" width="100%" alt="Open basket in table view">
-    </td>
-    <td align="center">
-      <strong>View chart</strong><br>
-      <img src="media/img_8.png" width="100%" alt="View chart">
     </td>
   </tr>
 </table>
