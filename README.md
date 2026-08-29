@@ -107,6 +107,7 @@ The project demonstrates layered architecture, STL containers and algorithms, fi
   </tr>
 </table>
 
+
 ## Technologies and Concepts
 * C++
 * Qt
@@ -158,6 +159,8 @@ Users can:
 * View the shopping basket and its total price
 * Save the shopping basket as a CSV or HTML file
 
+## UML Diagram
+![UML Diagram](start/DiagramTrenchCoatsOOPGood.drawio.png)
 
 ## Architecture
 
@@ -288,5 +291,3 @@ The application includes:
 * Duplicate prevention
 * Custom exceptions for repository and validation errors
 
-## UML Diagram
-![UML Diagram](start/DiagramTrenchCoatsOOPGood.drawio.png)
