@@ -25,6 +25,7 @@ Q_OBJECT
 public:
     explicit GUI(Service& service, QWidget *parent = nullptr);
     ~GUI() override;
+    void setInitialMode(int index);
 
 private:
     Ui::GUI *ui=nullptr;
@@ -70,6 +71,8 @@ private:
 
     void initChartTab();
     void updateChart();
+
+    //void setInitialMode(int index);
 };
 
 

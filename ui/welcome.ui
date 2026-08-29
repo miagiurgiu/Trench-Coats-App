@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Welcome</class>
+ <widget class="QWidget" name="Welcome">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>675</width>
+    <height>476</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Welcome</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#Welcome {
+    color: #F8F4E9;
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;SF Pro Display&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 14px;
+
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 1,
+        stop: 0 #0B000B,
+        stop: 0.45 #190019,
+        stop: 0.78 #271229,
+        stop: 1 #3B203F
+    );
+}
+
+QLabel#welcomeTitleLabel {
+    color: #F8F4E9;
+    background: transparent;
+
+    font-family: &quot;Inter&quot;, &quot;SF Pro Display&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 36px;
+    font-weight: 700;
+
+    min-height: 55px;
+    qproperty-alignment: AlignCenter;
+}
+
+QLabel#welcomeSubtitleLabel {
+    color: rgba(246, 219, 192, 195);
+    background: transparent;
+
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 15px;
+    font-weight: 400;
+
+    min-height: 35px;
+    qproperty-alignment: AlignCenter;
+}
+
+QPushButton#adminModeButton,
+QPushButton#userModeButton {
+    color: #F8F4E9;
+
+    font-family: &quot;Inter&quot;, &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;;
+    font-size: 15px;
+    font-weight: 600;
+
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 #321833,
+        stop: 1 #502D55
+    );
+
+    border: 1px solid rgba(147, 80, 115, 170);
+    border-radius: 14px;
+
+    min-width: 230px;
+    min-height: 58px;
+    max-height: 65px;
+
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+QPushButton#adminModeButton:hover,
+QPushButton#userModeButton:hover {
+    color: #190019;
+
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 #F6DBC0,
+        stop: 1 #F8F4E9
+    );
+
+    border: 1px solid #935073;
+}
+
+QPushButton#adminModeButton:pressed,
+QPushButton#userModeButton:pressed {
+    color: #F8F4E9;
+    background: #190019;
+    border: 1px solid #935073;
+}</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>648</width>
+     <height>358</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="spacing">
+     <number>18</number>
+    </property>
+    <property name="leftMargin">
+     <number>70</number>
+    </property>
+    <property name="topMargin">
+     <number>50</number>
+    </property>
+    <property name="rightMargin">
+     <number>70</number>
+    </property>
+    <property name="bottomMargin">
+     <number>50</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="welcomeTitleLabel">
+      <property name="text">
+       <string>Welcome Trench Coats Store!</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="welcomeSubtitleLabel">
+        <property name="text">
+         <string>Select your mode:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="adminModeButton">
+        <property name="text">
+         <string>Admin mode</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="userModeButton">
+        <property name="text">
+         <string>User mode</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

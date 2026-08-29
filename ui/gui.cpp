@@ -428,6 +428,10 @@ void GUI::updateChart() {
     this->chartWidget->setData(data);
 }
 
+void GUI::setInitialMode(int index) {
+    ui->tabWidget->setCurrentIndex(index);
+}
+
 GUI::~GUI() {
     delete this->basketTableView;
     delete ui;

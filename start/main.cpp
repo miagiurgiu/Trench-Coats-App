@@ -8,13 +8,28 @@
 #include "service/Service.h"
 #include "shopping_basket/CSVShoppingBasket.h"
 #include <QApplication>
-
+#include <QDialog>
+#include "welcome.h"
 #include "repo/DatabaseRepo.h"
 #include "shopping_basket/HTMLShoppingBasket.h"
 #include "ui/UI.h"
 #include "ui/gui.h"
 
+int runGUI(Service& service) {
+    Welcome welcome;
+
+    if (welcome.exec()!=QDialog::Accepted)
+        return 0;
+
+    GUI gui{service};
+    gui.setInitialMode(welcome.getSelectedMode());
+    gui.show();
+
+    return QApplication::exec();
+}
+
 int main(int argc,char *argv[]) {
+    QApplication application{argc,argv};
     std::string interface_option;
     while (true) {
         std::cout<<"Choose interface type (ui/gui): ";
@@ -55,12 +70,12 @@ int main(int argc,char *argv[]) {
                 ui.runApplication();
             }
             else {
-
-                QApplication app{argc,argv};
-                GUI gui{service};
-                gui.show();
-                return app.exec();
-                //std::cout<<"To be implemented";
+                return runGUI(service);
+                // QApplication app{argc,argv};
+                // GUI gui{service};
+                // gui.show();
+                // return app.exec();
+                // //std::cout<<"To be implemented";
             }
         }
         else {
@@ -71,11 +86,12 @@ int main(int argc,char *argv[]) {
                 ui.runApplication();
             }
             else {
-                QApplication app{argc,argv};
-                GUI gui{service};
-                gui.show();
-                return app.exec();
-                //std::cout<<"To be implemented";
+                return runGUI(service);
+                // QApplication app{argc,argv};
+                // GUI gui{service};
+                // gui.show();
+                // return app.exec();
+                // //std::cout<<"To be implemented";
             }
         }
     }
@@ -89,11 +105,12 @@ int main(int argc,char *argv[]) {
                 ui.runApplication();
             }
             else {
-                QApplication app(argc, argv);
-                GUI gui{service};
-                gui.show();
-                return app.exec();
-                //std::cout<<"To be implemented";
+                return runGUI(service);
+                // QApplication app(argc, argv);
+                // GUI gui{service};
+                // gui.show();
+                // return app.exec();
+                // //std::cout<<"To be implemented";
             }
         }
         else {
@@ -104,11 +121,12 @@ int main(int argc,char *argv[]) {
                 ui.runApplication();
             }
             else {
-                QApplication app(argc, argv);
-                GUI gui{service};
-                gui.show();
-                return app.exec();
-                //std::cout<<"To be implemented";
+                return runGUI(service);
+                // QApplication app(argc, argv);
+                // GUI gui{service};
+                // gui.show();
+                // return app.exec();
+                // //std::cout<<"To be implemented";
             }
         }
     }
